@@ -28,7 +28,7 @@ while true;do
 done
 
 echo "[feedback scores]"
-sort "$T/scores" | grep -v null | sort | sed 's/^\(.\)\(.\)$/\1X/; s/^\(.\)$/0X/' | sort | uniq -c | sort -k2 -n
+grep -v null "$T/scores" | sort | sed 's/^\(.\)\(.\)$/\1X/; s/^\(.\)$/0X/' | sort | uniq -c | sort -k2 -n
 echo "[number of modules with feedback scores]"
 grep -c -v null "$T/scores"
 echo "[number of modules without feedback scores]"
